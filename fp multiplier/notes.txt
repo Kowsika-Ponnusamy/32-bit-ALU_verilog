@@ -1,0 +1,2 @@
+->iverilog -o test csa.v dff.v fpmul.v fpmul_tb.v precircle.v predot.v prefix32.v wallacepipe32.v
+-> do pipelning

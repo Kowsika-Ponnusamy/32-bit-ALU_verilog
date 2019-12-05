@@ -1,0 +1,23 @@
+module fpmulti(out,a,b,clk);
+input [31:0]a,b;
+input clk;
+output [31:0]out;
+wire [31:0]exp1,exp2,expf,exp;
+wire [31:0] a1,b1;
+wire [63:0] man;
+wire cout1,cout2;
+assign exp1[7:0]=a[8:1];
+assign exp1[31:8]=24'd0;
+assign exp2[7:0]=b[8:1];
+assign exp2[31:8]=24'd0;
+prefix32 p1(exp,cout1,exp1,exp2,1'b0);
+prefix32 p2(expf,cout2,exp,32'b11111111111111111111111110000000,1'b1);
+assign a1[22:0]=a[31:9];
+assign a1[31:23]=9'b0;
+assign b1[22:0]=b[31:9];
+assign b1[31:23]=9'd0;
+wallacepipe w1(man,a1,b1,clk,1'b1);
+assign out[0]=a[0]^b[0];
+assign out[8:1]=expf[7:0];
+assign out[31:9]=man[22:0];
+endmodule
