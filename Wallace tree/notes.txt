@@ -1,0 +1,13 @@
+use 
+
+csa.v
+dff.v
+precircle.v
+predot.v
+prefix32.v
+wallacepipe32.v
+wallace32_tb
+
+NOTE:
+->here used is non piping prefix adder but use pipelined prefix adder
+
