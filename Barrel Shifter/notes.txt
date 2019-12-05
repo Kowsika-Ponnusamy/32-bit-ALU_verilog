@@ -1,0 +1,1 @@
+iverilog -o test prefix32.v reversal32.v predot.v precircle.v mux.v fp_tb.v floatingpoint.v dff.v comparator.v barrelshifterright.v barrelshifterleft.v

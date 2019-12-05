@@ -1,0 +1,10 @@
+module bsl(out,sel,rotate,in,clk,reset);
+input [31:0]in;
+input [4:0]sel;
+input clk,reset,rotate;
+output [32:0] out;
+wire [32:0]out1,in1;
+reversal32 r1(in1,1'b1,in);
+bsr bs(out1,sel,rotate,in1,clk,reset);
+reversal32 r2(out,1'b1,out1);
+endmodule
