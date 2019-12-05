@@ -1,0 +1,16 @@
+-->32 BITS PIPELINED PREFIX ADDER
+iverilog -o test dff.v precircle.v predot.v prefix32pipe.v prefix_tb.v
+-->32 BITS PIPELINED WALLACE TREE MULTIPLIER
+iverilog -o test csa.v dff.v dff63.v precircle.v predot.v prefix32pipe.v wallacepipe32.v wallace32_tb.v
+-->32 BITS PIPELINED BARREL RIGHT SHIFTER & ROTATOR
+iverilog -o test dff.v mux.v reversal32.v barrelshifterright32.v barrelshifter_tb.v
+-->32 BITS PIPELINED BARREL LEFT SHIFTER & ROTATOR
+iverilog -o test dff.v mux.v reversal32.v barrelshifterright32.v barrelshifterleft32.v barrelshifter_tb.v
+-->32 BITS FLOATING POINT MULTIPLIER
+iverilog -o test csa.v dff.v dff32.v dff63.v precircle.v predot.v prefix32pipe.v wallacepipe32.v fpmultipipe.v fpmul_tb.v
+-->32 BITS FLOATING POINT ADDER
+iverilog -o test barrelshifterleft23.v barrelshifterright23.v reversal23.v comp1.v comp2.v dff.v dff2.v dff8.v dff23.v dff32.v mux.v mux32.v predot.v precircle.v prefix32pipe.v fpaddpipe.v fp_tb.v
+-->32 BITS ALU
+iverilog -o test dff.v dff2.v dff8.v dff23.v dff32.v dff63.v mux.v mux32.v precircle.v predot.v prefix32pipe.v reversal23.v reversal32.v barrelshifterleft23.v barrelshifterright23.v barrelshifterleft.v barrelshifterright.v wallacepipe32.v comp1.v comp2.v csa.v fpmultipipe.v fpaddpipe.v ALU.V ALU_tb.v
+-->COS
+iverilog -o test dff.v dff2.v dff8.v dff23.v dff32.v dff63.v mux.v mux32.v precircle.v predot.v prefix32pipe.v reversal23.v reversal32.v barrelshifterleft23.v barrelshifterright23.v barrelshifterleft.v barrelshifterright.v wallacepipe32.v comp1.v comp2.v csa.v fpmultipipe.v fpaddpipe.v ALU.V cos08.v
